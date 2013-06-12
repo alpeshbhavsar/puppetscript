@@ -7,4 +7,5 @@ node 'pserver' {
 
 node 'pclient1' {
 	include nginx
+	include vnc
 }
