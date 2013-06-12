@@ -4,3 +4,7 @@ node 'pserver' {
 	include nginx
 	include git
 }
+
+node 'pclient1' {
+	include nginx
+}
