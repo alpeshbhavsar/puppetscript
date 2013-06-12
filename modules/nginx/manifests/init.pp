@@ -10,7 +10,7 @@ class nginx {
 		require	=> Package['httpd-*'],
 	}
 	file { '/etc/nginx/conf.d/abc.conf':
-		source	=> 'puppet:////etc/puppet/modules/nginx/files/abc.conf',
+		source	=> 'puppet:////opt/puppet/modules/nginx/files/abc.conf',
 		notify	=> Service['nginx'],
 	}
 	service { 'nginx':
