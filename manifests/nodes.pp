@@ -21,4 +21,4 @@ node 'pclient1' {
 	}
 }
 
-include localusers
+include local-users
