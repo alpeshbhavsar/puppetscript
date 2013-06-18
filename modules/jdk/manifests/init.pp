@@ -5,7 +5,7 @@ class jdk {
 	}
 
 	exec { 'change_permission_jdk':
-		command	=> 'mv /opt/jdk-6u45-linux-x64.bin?* /opt/jdk-6u45-linux-x64.bin && chmod a+x /opt/jdk-6u45-linux-x64.bin',
+		command	=> '/bin/mv /opt/jdk-6u45-linux-x64.bin?* /opt/jdk-6u45-linux-x64.bin && /bin/chmod a+x /opt/jdk-6u45-linux-x64.bin',
 		require		=> Exec['download oracle-jdk'],
 	}
 
