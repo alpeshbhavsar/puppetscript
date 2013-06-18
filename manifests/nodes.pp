@@ -1,13 +1,8 @@
-node 'pserver' {
+node 'pserver', 'pclient1' {
 	include vnc
 	include subversion
 	include nginx
 	include git
 }
 
-node 'pclient1' {
-	include nginx
-	include vnc
-	include localusers
-}
 
