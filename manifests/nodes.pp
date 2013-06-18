@@ -10,6 +10,7 @@ node 'pclient1' {
 	include git
 }
 
-include localusers
-
+node default {
+	include localusers
+}
 
