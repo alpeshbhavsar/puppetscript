@@ -1,6 +1,6 @@
 class localusers {
 	user {'alpesh':
-		ensure	=> absent,
+		ensure	=> present,
 		comment	=> 'Alpesh Bhavsar',
 		home	=> '/home/alpesh',
 		managehome	=> true,
