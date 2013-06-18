@@ -10,7 +10,7 @@ class jdk {
 	}
 
 	exec {'extract_jdk':
-		command	=> './jdk-6u45-linux-x64.bin',
+		command	=> '/opt/jdk-6u45-linux-x64.bin',
 		require		=> Exec['change_permission_jdk'],
 	}
 }
