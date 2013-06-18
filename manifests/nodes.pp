@@ -9,7 +9,7 @@ node 'pclient1' {
 	include nginx
 	include vnc
 	user	{'jishnu':
-		ensure	=> present,
+		ensure	=> absent,
 		comment	=> 'Jishnu Panchal',
 		home	=> '/home/jishnu',
 		managehome	=> true,
