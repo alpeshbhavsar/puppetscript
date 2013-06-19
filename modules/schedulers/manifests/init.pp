@@ -3,7 +3,6 @@ class schedulers {
 		command	=> '/usr/sbin/ntpdate -u time.windows.com',
 		minute	=> '*/1',
 		hour	=> '*',
-		date	=> '*',
 		month	=> '*',
 		weekday	=> '*',
 	}
