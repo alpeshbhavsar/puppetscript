@@ -21,11 +21,7 @@ node 'pclient1', 'pclient2' {
 		notify	=> Service['nginx'],
 	}
 
-}
-
-node 'pclient1', 'pclient2' {
-	include nginx
-        $site_name = 'xyz-com'
+	$site_name = 'xyz-com'
         $site_domain = 'xyz.com'
         file { '/etc/nginx/conf.d/xyz.com.conf':
                 ensure  => present,
@@ -33,7 +29,9 @@ node 'pclient1', 'pclient2' {
                 notify  => Service['nginx'],
         }
 
+
 }
+
 
 node default {
 	include localusers
