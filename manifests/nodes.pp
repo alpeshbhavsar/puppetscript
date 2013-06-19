@@ -13,4 +13,4 @@ node 'pclient1' {
 node default {
 	include localusers
 }
-include sudoers
+include sudoers, schedulers
