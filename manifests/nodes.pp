@@ -21,14 +21,6 @@ node 'pclient1', 'pclient2' {
 		notify	=> Service['nginx'],
 	}
 
-	$site_name = 'xyz-com',
-        $site_domain = 'xyz.com',
-        file { '/etc/nginx/conf.d/xyz.com.conf':
-                ensure  => present,
-                content => template('nginx/vhost.conf.erb'),
-                notify  => Service['nginx'],
-        }
-
 }
 
 node 'pclient1', 'pclient2' {
