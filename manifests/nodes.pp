@@ -11,6 +11,7 @@ node 'pclient1' {
 }
 
 node 'pclient1', 'pclient2' {
+	include nginx
 	$site_name = 'abc-com',
 	$site_domain = 'abc.com',
 	file { '/etc/nginx/conf.d/abc.com.conf':
@@ -22,7 +23,7 @@ node 'pclient1', 'pclient2' {
 }
 
 node 'pclient1', 'pclient2' {
-
+	include nginx
         $site_name = 'xyz-com',
         $site_domain = 'xyz.com',
         file { '/etc/nginx/conf.d/xyz.com.conf':
