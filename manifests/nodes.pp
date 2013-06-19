@@ -10,6 +10,18 @@ node 'pclient1' {
 	include git
 }
 
+##Web servers##
+node 'pclient1', 'pclient2' {
+	include nginx
+	$site_name = 'abc-com',
+	$site_domain = 'abc.com',
+	file { '/etc/nginx/site-enabled/abc.com.conf':
+		ensure	=> present,
+		content	=> template('nginx/vhost.conf.erb'),
+		notify	=> Service['nginx'],
+	}
+
+}
 node default {
 	include localusers
 }

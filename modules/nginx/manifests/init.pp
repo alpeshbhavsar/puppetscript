@@ -9,9 +9,8 @@ class nginx {
 		ensure	=> installed,
 		require	=> Package['httpd-*'],
 	}
-	file { '/etc/nginx/conf.d/abc.conf':
-		source	=> 'puppet:////opt/puppet/modules/nginx/files/abc.conf',
-		notify	=> Service['nginx'],
+	file { '/etc/nginx/site-enabled/default':
+		ensure	=> absent,
 	}
 	service { 'nginx':
 		ensure	=> running,
