@@ -10,7 +10,6 @@ node 'pclient1' {
 	include git
 }
 
-##Web servers##
 node 'pclient1', 'pclient2' {
 	$site_name = 'abc-com',
 	$site_domain = 'abc.com',
