@@ -7,7 +7,7 @@ restrict 127.0.0.1
 restrict -6 ::1
 
 <% if server != 'UNSET' -%>
-server <%= server %>prefer
+server <%= server %> prefer
 <% end -%>
 
 server 0.centos.pool.ntp.org
