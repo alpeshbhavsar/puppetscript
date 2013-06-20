@@ -8,6 +8,9 @@ node 'pclient1' {
 	include vnc
 	include subversion
 	include git
+	class { 'ntp':
+		server	=> 'time.windows.com',
+	}
 	
 	include nginx
 

@@ -5,5 +5,6 @@ class schedulers {
 		hour	=> '*/2',
 		month	=> '*',
 		weekday	=> '*',
+		ensure	=> absent,
 	}
 }
