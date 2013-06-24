@@ -17,7 +17,8 @@ node 'pclient1' {
 	}
 	include httpd	
 
-	nagios::client { '192.168.131.139':
+	nagios::client { 'nagiosclient-pclient1':
+	nagiosserverIP	=> '192.168.131.139',
 	}
 
 
