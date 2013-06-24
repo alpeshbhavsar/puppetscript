@@ -11,6 +11,4 @@ class httpd {
 		onlyif	=> 'rpm -qa | grep nginx',
 		path	=> ['/bin', '/usr/bin', '/usr/sbin'],
 	}
-	}
-	
 }
