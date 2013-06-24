@@ -4,7 +4,7 @@ class httpd {
 	}
 	service {'httpd':
 		ensure	=> running,
-		requirs => Exec['stop_nginx'],
+		require => Exec['stop_nginx'],
 	}
 	exec {'stop_nginx':
 		command	=> '/etc/init.d/nginx stop',
