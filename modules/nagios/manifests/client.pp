@@ -10,7 +10,7 @@ define nagios::client( $nagiosserverIP ) {
 		command	=> 'cat /etc/nagios/nrpe.conf',
 	}
 	exec {'allownagiosserver':
-		command	=> 'sed -i".bak" '/allowed_hosts/d\' /etc/nagios/nrpe.conf && echo "allowed_hosts=$nagiosserverIP" >> /etc/nagios/nrpe.conf',
+		command	=> "sed -i\".bak\" \'/allowed_hosts/d\' /etc/nagios/nrpe.conf && echo \"allowed_hosts\=$nagiosserverIP\" >> /etc/nagios/nrpe.conf",
 		require	=> Exec['checknrpefileexists'],
 	}
 	exec {'restartnrpeclient':
