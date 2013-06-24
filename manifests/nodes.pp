@@ -7,7 +7,9 @@ node 'pserver' {
 
 node 'nagiosserver' {
 	include httpd, nagios
-	nagios::server::hostAdd {'pclient1','192.168.131.137'}
+	nagios::server::hostAdd {'test':
+	$clienthostname = 'pclient1'
+	$clientIPaddress = '192.168.131.137'
 	}
 
 node 'pclient1' {
