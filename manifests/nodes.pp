@@ -4,6 +4,10 @@ node 'pserver' {
 	include httpd
 	include git
 }
+
+node 'nagiosserver' {
+	include httpd
+	}
 node 'pclient1' {
 	include vnc
 	include subversion
