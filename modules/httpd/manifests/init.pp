@@ -9,6 +9,8 @@ class httpd {
 	exec {'stop_nginx':
 		command	=> '/etc/init.d/nginx stop',
 		onlyif	=> 'rpm -qa | grep nginx',
+		path	=> ['/bin', '/usr/bin', '/usr/sbin'],
+	}
 	}
 	
 }
