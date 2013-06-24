@@ -11,10 +11,7 @@ node 'pclient1' {
 	class { 'ntp':
 		server	=> 'time.windows.com',
 	}
-	
-	nginx::website { 'alpesh-com':
-		site_domain => 'alpesh.com',
-	}
+	include httpd	
 
 
 
