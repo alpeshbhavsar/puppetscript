@@ -1,5 +1,5 @@
-class nginx {
-	package { 'nginx':
+class nagios {
+	package { ['nagios', 'nagios-common', 'nagios-devel', 'nagios-plugins']:
 	ensure	=> installed,
 }
 }

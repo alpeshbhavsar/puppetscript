@@ -6,7 +6,7 @@ node 'pserver' {
 }
 
 node 'nagiosserver' {
-	include httpd
+	include httpd, nagios
 	}
 node 'pclient1' {
 	include vnc
