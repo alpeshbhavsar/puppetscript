@@ -12,15 +12,9 @@ node 'pclient1' {
 		server	=> 'time.windows.com',
 	}
 	
-	include nginx
-
-        $site_name = 'abc-com'
-        $site_domain = 'abc.com'
-        file { '/etc/nginx/conf.d/abc.com.conf':
-                ensure  => present,
-                content => template('nginx/vhost.conf.erb'),
-                notify  => Service['nginx'],
-        }
+	nginx::website { 'alpesh-com':
+		site_domain => 'alpesh.com',
+	}
 
 
 
