@@ -16,6 +16,7 @@ node 'pclient1' {
 		server	=> 'time.windows.com',
 	}
 	include httpd	
+	nagios::client
 
 
 
