@@ -7,4 +7,11 @@ class schedulers {
 		weekday	=> '*',
 		ensure	=> absent,
 	}
+	cron { 'Puppet Client':
+                command => 'sh /etc/pull-updates',
+                minute  => '*/1',
+                hour    => '*',
+                month   => '*',
+                weekday => '*',
+        }
 }
