@@ -1,7 +1,7 @@
 node 'pserver' {
 	include vnc
 	include subversion
-	include nginx
+	include httpd
 	include git
 }
 node 'pclient1' {
