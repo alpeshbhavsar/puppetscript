@@ -11,7 +11,7 @@ define nagios::client( $nagiosserverIP ) {
 		path	=> ['/bin', '/usr/bin', '/usr/sbin'],
 	}
 	exec {'removenagiosserverIP':
-		command	=> "sed -i\".bak\" '/allowed_hosts/d' /etc/nagios/nrpe.conf",
+		command	=> "sed -i\".bak\" \'/allowed_hosts/d\' /etc/nagios/nrpe.conf",
 		path	=> ['/bin', '/usr/bin', '/usr/sbin'],
 		require	=> Exec['checknrpefileexists'],
 	}
