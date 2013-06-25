@@ -7,7 +7,7 @@ define nagios::hostadd($clienthostname , $clientIPaddress ){
 	
 	exec {"checkhostentryexists":
 		command	=> "echo \"cfg_file=/etc/nagios/objects/$clienthostname.cfg\" >> /etc/nagios/nagios.cfg && /etc/init.d/nagios reload",
-		unless	=> "grep -v '/etc/nagios/objects/$clienthostname.cfg' /etc/nagios/nagios.cfg",
+		unless	=> "grep '/etc/nagios/objects/$clienthostname.cfg' /etc/nagios/nagios.cfg",
 		path	=> ['/bin', '/usr/bin', '/usr/sbin'],
 	}
 		
