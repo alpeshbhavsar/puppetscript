@@ -1,6 +1,9 @@
-define nagios::server::hostadd( $clienthostname, $clientIPaddress) {
+define nagios::HostAdd( 
+	$clienthostname,
+	$clientIPaddress
+)
+
 	file {'/etc/nagios/objects/$clienthostname.cfg':
 		ensure	=> present,
-		template=> 'nagios/client.conf.erb',
+		content	=> template('nagios/client.conf.erb'),
 	}
-}
