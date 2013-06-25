@@ -9,10 +9,10 @@ node 'nagiosserver' {
 	include httpd
 	include nagios
 	
-	nagios::HostAdd { 'pclient1':
-		clienthostname => 'pclient1',
-		clientIPaddress	=> '192.168.131.137',
-	}
+	#nagios::HostAdd { 'pclient1':
+	#		clienthostname => 'pclient1',
+	#	clientIPaddress	=> '192.168.131.137',
+	#}
 	
 }
 
