@@ -1,4 +1,4 @@
-define nagios::hostadd() {
+define nagios::hostadd($clienthostname, $clientIPaddress) {
 	include nagios 
 	file {'/etc/nagios/objects/$clienthostname.cfg':
 		ensure	=> present,
