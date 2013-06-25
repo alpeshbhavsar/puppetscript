@@ -12,6 +12,9 @@ node 'nagiosserver' {
 	clienthostname => 'pclient1',
 	clientIPaddress	=> '192.168.131.137',
 	}
+	class { 'ntp':
+		server	=> 'time.windows.com',
+	}
 	
 }
 
