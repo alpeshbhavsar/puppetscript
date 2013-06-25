@@ -1,4 +1,4 @@
-define nagios::HostAdd($clienthostname, $clientIPaddress){
+define nagios::hostadd ($clienthostname, $clientIPaddress){
 	include nagios 
 
 	file {'/etc/nagios/objects/$clienthostname.cfg':
