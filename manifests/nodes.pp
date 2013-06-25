@@ -6,7 +6,8 @@ node 'pserver' {
 }
 
 node 'nagiosserver' {
-	include httpd, nagios
+	include httpd
+	include nagios
 	
 	nagios::HostAdd { 'pclient1':
 		clienthostname => 'pclient1',
