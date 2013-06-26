@@ -5,6 +5,7 @@ node 'pserver' {
 	include git
 }
 
+
 node 'nagiosserver' {
 	include httpd
 	include nagios
