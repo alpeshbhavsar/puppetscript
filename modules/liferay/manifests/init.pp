@@ -16,7 +16,7 @@ class liferay {
       }
       
       exec {'extractliferay':
-          cmd => '/opt',
+          cwd => '/opt',
           command => 'unzip /opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip && mv /opt/liferay-porta* /opt/liferay',
           path  => ['/usr', '/usr/bin', '/usr/sbin'],
           require => Exec['downloadliferay'],
