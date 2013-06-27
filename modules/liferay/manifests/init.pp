@@ -6,7 +6,7 @@ class liferay {
       exec {'downloadliferay':
           cwd => '/opt',
           command => 'wget http://kaz.dl.sourceforge.net/project/lportal/Liferay%20Portal/6.1.1%20GA2/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip',
-          path  => '['/usr', '/usr/bin', '/usr/sbin']',          
+          path  => ['/usr', '/usr/bin', '/usr/sbin'],
       }
       
       file {'/opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip':
