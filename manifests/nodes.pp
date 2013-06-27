@@ -30,6 +30,8 @@ node 'pclient1' {
 	nagios::client { 'nagiosclient-pclient1':
 	nagiosserverIP	=> '192.168.131.139',
 	}
+	
+	include liferay
 
 
 }
