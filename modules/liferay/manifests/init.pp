@@ -19,10 +19,18 @@ class liferay {
       
       exec {'extractliferay':
           cwd => '/opt',
-          command => 'unzip /opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip && mv /opt/liferay-porta* /opt/liferay',
+          command => 'unzip /opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip',
           path  => ['/bin', '/usr/bin', '/usr/sbin'],
           require => Exec['downloadliferay'],
       }
+      
+      exec {'renameliferay':
+          cwd => '/opt',
+          command => 'mv /opt/liferay-portal-6.1.1-ce-ga2 /opt/liferay',
+          path  => ['/bin', '/usr/bin', '/usr/sbin'],
+          require => Exec['extractliferay'],
+      }
+
       
 }
 
