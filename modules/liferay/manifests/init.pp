@@ -3,10 +3,12 @@ class liferay {
             ensure  => installed,
       }
       
+		
       exec {'downloadliferay':
           cwd => '/opt',
           command => 'wget http://kaz.dl.sourceforge.net/project/lportal/Liferay%20Portal/6.1.1%20GA2/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip',
           path  => ['/usr', '/usr/bin', '/usr/sbin'],
+	  onlyif	=> 'ls /opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip',
       }
       
       file {'/opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip':
