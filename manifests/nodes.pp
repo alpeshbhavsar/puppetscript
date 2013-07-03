@@ -3,6 +3,11 @@ node 'pserver' {
 	include subversion
 	include httpd
 	include git
+	ssh_authorized_key { 'root_ssh':
+        user => 'root',
+        type => 'rsa',
+	key	=> 'AAAAB3NzaC1yc2EAAAABIwAAAQEAxN+5D5m/IiIV6uapIUOMbgSDZPnvJsfh6hVUaxqHQQH8aEw43JY3QvAbsQS8Puu3mQBfP8gdxqyewF2SNbOIpjwCwdry5bVnpYoQp7WgVDQp+eC3SZ1EnudCYSIfgi/nO1b9BjBXxq4kUxsNNpumI0gMJIlTx+UYuldkJJMgVm4t/q7xG3XrZl9znkdAcU6ZG2Ukh+eG3TQRR6ARrTOd4doCAg3qoRUPaVapgyjpUctVu6IytGJwupqa7sWrabAACRwClFCGmIDsuieh9J3gnESibN38OzIs+R5VkHmx0bkzmJtKwU4yPluRXgXmoJDopZr0KPxtFanpn/jifTEvYQ==',
+        }
 }
 
 #test comment added
