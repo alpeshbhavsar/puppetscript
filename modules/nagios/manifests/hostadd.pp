@@ -5,9 +5,9 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
 		content	=> template('nagios/client.conf.erb'),
 	}
 
-	hostgroupname => $clientGroupname
-	hostgroup_alias => $clientGroupname
-	members_list => $clienthostname
+	$hostgroupname = $clientGroupname
+	$hostgroup_alias = $clientGroupname
+	$members_list = $clienthostname
 	file {"/etc/nagios/objects/$clientGroupname.cfg":
                 replace => "no",
                 ensure  => present,
