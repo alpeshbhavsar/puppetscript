@@ -16,10 +16,12 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
         	}
 	}
 	else
+	{
 		file {"/etc/nagios/objects/$clientGroupname.cfg":
                 ensure  => present,
 		content => template('nagios/hostgroup.cfg.erb'),
         	}
+	}
 	end	
 
 	
