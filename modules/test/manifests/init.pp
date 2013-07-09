@@ -1,4 +1,4 @@
-class test12 {
+class testingz {
 	file {"/root/hostgroup.txt":
 		ensure	=> present,
 	}
