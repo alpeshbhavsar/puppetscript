@@ -38,7 +38,7 @@ node 'pclient1' {
 	nagiosserverIP	=> '192.168.131.139',
 	}
 	
-	include liferay
+#	include liferay
 
 
 }

@@ -15,12 +15,12 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
                 }
 
 		exec {"getcurrentmemberlist":
-                	command => "`cmembers=gawk -Fmembers '{ print $2 }' \"/etc/nagios/objects/$clientGroupname.cfg\"`",
+                	command => "echo `gawk -Fmembers '{ print $2 }' \"/etc/nagios/objects/$clientGroupname.cfg\"` > /tmp/temptext.txt",
 			path    => ['/bin', '/usr/bin', '/usr/sbin'],
         	}
 
         	exec {"addnewmemberinhostgroup":
-                	command => "$cmembers=\"$clienthostname,$cmembers\"",
+                	command => "sed -i \'/allowed_hosts/d\' /etc/nagios/nrpe.cfgcho `cat /tmp/temptext.txt`$cmembers=\"$clienthostname,$cmembers\"",
                 	require => Exec['getcurrentmemberlist'],
 			path    => ['/bin', '/usr/bin', '/usr/sbin'],
         	}
