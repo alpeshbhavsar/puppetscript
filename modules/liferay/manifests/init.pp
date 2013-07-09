@@ -11,12 +11,7 @@ class liferay {
 	  unless => 'ls /opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip',
       }
       
-      file {'/opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip':
-          ensure  => present,
-          mode    => 0755,
-          require => Exec['downloadliferay'],
-      }
-      
+		
       exec {'extractliferay':
           cwd => '/opt',
           command => 'unzip /opt/liferay-portal-tomcat-6.1.1-ce-ga2-20120731132656558.zip',

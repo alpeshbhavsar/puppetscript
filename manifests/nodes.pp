@@ -17,6 +17,7 @@ node 'nagiosserver' {
 	nagios::hostadd {'testnode1':
 	clienthostname => 'pclient1',
 	clientIPaddress	=> '192.168.131.137',
+	clientGroupname	=> 'linux',
 	}
 	class { 'ntp':
 		server	=> 'time.windows.com',
