@@ -15,7 +15,7 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
                 }
 
 		exec {"getcurrentmemberlist":
-                	command => "export cmembers=`gawk -Fmembers '{ print $2 }' \"/etc/nagios/objects/$clientGroupname.cfg\"`",
+                	command => "cmembers=`gawk -Fmembers '{ print $2 }' \"/etc/nagios/objects/$clientGroupname.cfg\"`",
 			path    => ['/bin', '/usr/bin', '/usr/sbin'],
         	}
 
