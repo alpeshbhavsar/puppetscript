@@ -14,7 +14,7 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
 	}
 	
 	exec {"addnewmemberinhostgroup":
-		command	=> "$cmembers=$clienthostname+$cmembers",
+		command	=> "$cmembers=\"$clienthostname,$cmembers\"",
 		require	=> Exec['getcurrentmemberlist'],
 	}	
 
