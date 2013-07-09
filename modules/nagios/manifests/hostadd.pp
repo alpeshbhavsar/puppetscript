@@ -5,7 +5,12 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
 		content	=> template('nagios/client.conf.erb'),
 	}
 
-	if(exists("/etc/nagios/objects/$clientGroupname.cfg")){
+	file {"/etc/nagios/objects/$clientGroupname.cfg":
+                replace => "no",
+                ensure  => present,
+                content => template('nagios/hostgroup.cfg.erb'),
+                }
+
 		exec {"getcurrentmemberlist":
                 	command => "export cmembers=`gawk -Fmembers '{ print $2 }' \"/etc/nagios/objects/$clientGroupname.cfg\"`",
         	}
@@ -14,14 +19,6 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
                 	command => "$cmembers=\"$clienthostname,$cmembers\"",
                 	require => Exec['getcurrentmemberlist'],
         	}
-	}
-	else
-	{
-		file {"/etc/nagios/objects/$clientGroupname.cfg":
-                ensure  => present,
-		content => template('nagios/hostgroup.cfg.erb'),
-        	}
-	}
 
 	
 	exec {"checkhostentryexists":
