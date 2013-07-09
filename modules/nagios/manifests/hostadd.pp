@@ -22,9 +22,7 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
 		content => template('nagios/hostgroup.cfg.erb'),
         	}
 	}
-	end	
 
-	
 	
 	exec {"checkhostentryexists":
 		command	=> "echo \"cfg_file=/etc/nagios/objects/$clienthostname.cfg\" >> /etc/nagios/nagios.cfg && /etc/init.d/nagios reload",
