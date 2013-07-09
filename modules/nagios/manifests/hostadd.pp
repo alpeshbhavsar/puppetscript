@@ -8,7 +8,7 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
 	$hostgroupname = $clientGroupname
 	$hostgroup_alias = $clientGroupname
 	$members_list = $clienthostname
-	$cmembers = ""
+	cmembers = ""
 	file {"/etc/nagios/objects/$clientGroupname.cfg":
                 replace => "no",
                 ensure  => present,
@@ -16,7 +16,7 @@ define nagios::hostadd($clienthostname , $clientIPaddress, $clientGroupname ){
                 }
 
 		exec {"getcurrentmemberlist":
-                	command => "$cmembers=`gawk -Fmembers '{ print $2 }' \"/etc/nagios/objects/$clientGroupname.cfg\"`",
+                	command => "cmembers=`gawk -Fmembers '{ print $2 }' \"/etc/nagios/objects/$clientGroupname.cfg\"`",
 			path    => ['/bin', '/usr/bin', '/usr/sbin'],
         	}
 
