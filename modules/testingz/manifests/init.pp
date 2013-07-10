@@ -5,8 +5,8 @@ class testingz {
 	$lists = "`/bin/gawk -Fmembers '{ print $2 }' /root/hostgroup.txt`"
 	
 	$listsmembers = split($lists, ',')
-	$count = size($listsmembers)
+	
 	exec {'addcontent':
-		command	=> "/bin/echo $count > /tmp/free.txt",
+		command	=> "/bin/echo $listsmembers[2] > /tmp/free.txt",
 	}
 }
